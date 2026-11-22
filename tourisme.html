@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://clauvia.fr/tourisme.html">
+<title>Tourisme dans les Combrailles et la Vallée de la Sioule — Clauvia</title>
+<meta name="description" content="Viaduc des Fades, méandre de Queuille, Gour de Tazenat, Chaîne des Puys : ce que les voyageurs viennent chercher dans les Combrailles et la Vallée de la Sioule, et pourquoi c'est une bonne terre pour la location saisonnière.">
+<meta property="og:title" content="Tourisme dans les Combrailles et la Vallée de la Sioule — Clauvia">
+<meta property="og:description" content="Ce que les voyageurs viennent chercher dans les Combrailles : sites, balades, rivière et volcans, à deux pas des logements que je gère.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clauvia.fr/tourisme.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clauvia">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- Charte Clauvia : serif à empattements fins + sans-serif géométrique -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero-tourisme { padding: clamp(44px, 8vw, 84px) 0 clamp(36px, 5vw, 56px); border-bottom: 1px solid var(--line); }
+  .hero-tourisme h1 em { font-style: italic; color: var(--green); }
+  .hero-tourisme .lede { margin-top: 22px; }
+  .hero-tourisme .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+  /* --- Sites : grille éditoriale, sans cartes --- */
+  .sites { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+  .site { padding: 28px 28px 28px 0; border-bottom: 1px solid var(--line); }
+  .site:nth-child(2n) { padding-left: 28px; padding-right: 0; border-left: 1px solid var(--line); }
+  .site .lieu { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brass-dark); margin: 0 0 8px; }
+  .site h3 { font-size: 1.5rem; color: var(--green); margin-bottom: 10px; }
+  .site p { font-size: .95rem; color: #45423a; margin: 0; }
+
+  /* --- Activités --- */
+  .activites { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+  .activite { padding: 6px 26px 6px 0; }
+  .activite + .activite { padding-left: 26px; border-left: 1px solid var(--line); }
+  .activite .num { font-family: var(--serif); font-size: .95rem; color: var(--brass); letter-spacing: .16em; }
+  .activite h3 { margin: 10px 0 8px; color: var(--green); }
+  .activite p { font-size: .92rem; color: #45423a; margin: 0; }
+
+  /* --- Encart propriétaires --- */
+  .proprio { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
+
+  @media (max-width: 900px) {
+    .activites { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
+    .activite:nth-child(3) { padding-left: 0; border-left: 0; }
+    .proprio { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .sites { grid-template-columns: minmax(0, 1fr); }
+    .site, .site:nth-child(2n) { padding: 24px 0; border-left: 0; }
+    .activites { grid-template-columns: minmax(0, 1fr); }
+    .activite, .activite + .activite { padding: 0; border-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="menu-principal">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services &amp; formules</a>
+      <a href="clauvia.html">Clauvia</a>
+      <a href="tourisme.html" aria-current="page">Tourisme</a>
+      <a class="cta-link" href="contact.html">Devis gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <div class="hero-tourisme">
+    <div class="wrap">
+      <p class="eyebrow">Tourisme</p>
+      <h1>Les Combrailles, <em>ce qu'on vient y chercher</em>.</h1>
+      <p class="lede">
+        Une rivière, des gorges, des volcans à l'horizon et beaucoup de calme.
+        Voici ce que je conseille aux voyageurs qui séjournent dans les logements que je gère —
+        et ce qui fait venir du monde toute l'année.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#sites">Les incontournables</a>
+        <a class="btn btn-ghost" href="#proprietaires">Vous avez un logement ici&nbsp;?</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-white" id="sites">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">À voir</p>
+        <h2>Les incontournables, tout près</h2>
+        <p class="lede">Des lieux à quelques minutes de route, qu'on peut enchaîner sur une journée ou garder pour la fin du séjour.</p>
+      </div>
+
+      <div class="sites">
+        <div class="site">
+          <p class="lieu">Les Ancizes-Comps · Sauret-Besserve</p>
+          <h3>Le viaduc des Fades</h3>
+          <p>Achevé en 1909, il enjambe la Sioule à plus de 130 mètres de haut. L'un des plus hauts viaducs ferroviaires d'Europe, à admirer depuis les belvédères alentour.</p>
+        </div>
+        <div class="site">
+          <p class="lieu">Queuille</p>
+          <h3>Le méandre de Queuille</h3>
+          <p>La Sioule fait presque un tour complet sur elle-même au fond de la vallée. Le belvédère offre l'une des plus belles vues du département, surtout au lever du jour.</p>
+        </div>
+        <div class="site">
+          <p class="lieu">Vallée de la Sioule</p>
+          <h3>Le lac des Fades-Besserve</h3>
+          <p>La retenue du barrage forme un long plan d'eau entre les gorges boisées : pêche, balades sur les berges et pique-niques au calme.</p>
+        </div>
+        <div class="site">
+          <p class="lieu">Charbonnières-les-Vieilles</p>
+          <h3>Le Gour de Tazenat</h3>
+          <p>Un lac de cratère presque parfaitement rond, au nord de la Chaîne des Puys. Le sentier en fait le tour en une petite heure.</p>
+        </div>
+        <div class="site">
+          <p class="lieu">Pontgibaud</p>
+          <h3>Le château Dauphin</h3>
+          <p>Forteresse médiévale au cœur du bourg, au bord de la Sioule. Une étape facile, à combiner avec les rues anciennes et le marché.</p>
+        </div>
+        <div class="site">
+          <p class="lieu">Patrimoine mondial de l'UNESCO</p>
+          <h3>La Chaîne des Puys</h3>
+          <p>Le puy de Dôme et ses quatre-vingts volcans voisins, inscrits à l'UNESCO avec la faille de Limagne en 2018. Randonnées, panorama, et Vulcania pour les familles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">À faire</p>
+        <h2>Dehors, surtout</h2>
+      </div>
+      <div class="activites">
+        <div class="activite">
+          <span class="num">01</span>
+          <h3>Randonnée</h3>
+          <p>Des sentiers balisés partout, des chemins creux aux crêtes au-dessus des gorges. Le livret d'accueil indique ceux qui partent à pied du logement.</p>
+        </div>
+        <div class="activite">
+          <span class="num">02</span>
+          <h3>Pêche</h3>
+          <p>La Sioule et ses affluents sont réputés pour la truite. Cartes de pêche en ligne ou chez les dépositaires du coin.</p>
+        </div>
+        <div class="activite">
+          <span class="num">03</span>
+          <h3>Rivière</h3>
+          <p>Canoë et kayak en saison sur les portions calmes de la Sioule, baignade dans les lieux autorisés.</p>
+        </div>
+        <div class="activite">
+          <span class="num">04</span>
+          <h3>Terroir</h3>
+          <p>Marchés de village, fromages d'Auvergne, producteurs en vente directe : je donne les bonnes adresses à l'arrivée.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white" id="proprietaires">
+    <div class="wrap proprio">
+      <div>
+        <p class="eyebrow">Pour les propriétaires</p>
+        <h2>Un territoire qui fait venir des voyageurs</h2>
+        <p style="color:var(--muted); font-size:.95rem; margin:18px 0 0">
+          À moins d'une heure de Clermont-Ferrand, entre rivière et volcans : la demande ne se limite pas à l'été.
+        </p>
+      </div>
+      <div>
+        <ul class="ticks">
+          <li>Randonneurs, pêcheurs et familles au printemps et en été</li>
+          <li>Séjours courts et week-ends tout au long de l'année</li>
+          <li>Déplacements professionnels autour de Clermont-Ferrand et des Combrailles</li>
+          <li>Un livret d'accueil avec les bonnes adresses, préparé pour chaque logement</li>
+        </ul>
+        <p style="margin:22px 0 0"><a href="services.html">Voir les services et les formules →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-green">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:28px;align-items:center">
+      <div style="flex:1 1 340px">
+        <h2>Un logement à confier dans les Combrailles&nbsp;?</h2>
+        <p class="lede" style="margin:12px 0 0">Dites-moi où il est et ce que vous voulez déléguer. Je réponds sous 24 h.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-light" href="contact.html">Demander un devis</a>
+        <a class="btn btn-outline-light" href="tel:+33768427316">07 68 42 73 16</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand brand--light" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <span>Conciergerie de location saisonnière — Vallée de la Sioule et Combrailles</span>
+    <span class="legal">
+      <a href="mailto:contact.clauvia@gmail.com">contact.clauvia@gmail.com</a>
+      <a href="tel:+33768427316">07 68 42 73 16</a>
+      <span>© <span id="year">2026</span> Clauvia</span>
+    </span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Menu déroulant sur téléphone
+  (function () {
+    var b = document.querySelector('.burger'), n = document.getElementById('menu-principal');
+    if (!b || !n) return;
+    b.addEventListener('click', function () {
+      var ouvert = n.classList.toggle('ouvert');
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    n.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { n.classList.remove('ouvert'); b.setAttribute('aria-expanded', 'false'); }
+    });
+  })();
+</script>
+</body>
+</html>
