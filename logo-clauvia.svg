@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 160" fill="none" stroke="#A68A64" stroke-width="9.1" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
-  <path d="M73.21 84.85 A36.06 36.06 0 1 0 18.57 25.79 L34.94 42.43"/>
-  <path d="M40 102 V150"/>
-  <path d="M40 126 H65"/>
-  <path d="M40 139 H58"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" fill="none" stroke="#A68A64" stroke-width="8" aria-hidden="true">
+  <!-- Clé Clauvia : anneau en C ouvert à droite qui se prolonge dans la tige, deux dents en bas.
+       Cadre 1:2 pour garder les dimensions 30 × 60 de l'en-tête. -->
+  <path d="M80.2 23.1 A40 40 0 1 0 80.2 68.9"/>
+  <path d="M47 86 V192" stroke-linecap="round"/>
+  <path d="M47 158 H71"/>
+  <path d="M47 172 H68"/>
 </svg>
