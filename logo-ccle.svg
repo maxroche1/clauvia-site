@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 160" role="img" aria-label="Clauvia">
+  <title>Clauvia — le C-clé</title>
+  <!-- Réplique du logo : anneau en C ouvert à droite, extrémités coupées net,
+       tige verticale, deux dents à droite. Trait fin, proportions de la maquette. -->
+  <g fill="none" stroke="#A68A64" stroke-width="7.5" stroke-linecap="butt">
+    <!-- Anneau (C ouvert à droite) -->
+    <path d="M73 25 A38.5 38.5 0 1 0 73 96"/>
+    <!-- Tige -->
+    <path d="M39.5 100 V151"/>
+    <!-- Dent longue -->
+    <path d="M39.5 126 H67"/>
+    <!-- Dent courte -->
+    <path d="M39.5 140 H57"/>
+  </g>
+</svg>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Services, formules et pack de lancement — Clauvia</title>
+<meta name="description" content="Accueil, ménage, linge, états des lieux, maintenance : tout ce qu'il faut entre deux voyageurs. Trois formules (Ponctuel à la carte, Sérénité 12,5 % et Complète 15 % la première année — puis 15 % et 18 % — ménage compris) et un pack de lancement pour un logement qui démarre. Aucune formule n'est engageante : on peut arrêter quand on veut.">
+<!-- Charte Clauvia : serif à empattements fins + sans-serif géométrique -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero-services { padding: clamp(44px, 8vw, 84px) 0 clamp(36px, 5vw, 56px); border-bottom: 1px solid var(--line); }
+  .hero-services h1 em { font-style: italic; color: var(--green); }
+  .hero-services .lede { margin-top: 22px; }
+  .hero-services .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+  /* --- Services --- */
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+  .service { padding: 26px 26px 26px 0; border-bottom: 1px solid var(--line); }
+  .service:nth-child(2n) { padding-left: 26px; border-left: 1px solid var(--line); }
+  .service h3 { margin-bottom: 8px; }
+  .service p { font-size: .95rem; color: #45423a; margin: 0; }
+
+  /* --- Pack de lancement : bloc éditorial, pas une carte --- */
+  .lancement { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(24px, 4vw, 48px); background: var(--accent-soft); border: 1px solid #dcc3ad; border-radius: var(--radius); padding: clamp(24px, 4vw, 36px); }
+  .lancement .tag { font-size: .68rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; color: var(--accent); margin: 0 0 10px; }
+  .lancement h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 10px; }
+  .lancement .sous { font-size: .95rem; color: #4a3a2c; margin: 0; max-width: 34ch; }
+  .lancement-note { margin-top: 18px; font-size: .86rem; color: #5b4a39; }
+  .prix-pack { font-family: var(--serif); font-size: 2.2rem; color: var(--green); margin: 14px 0 0; line-height: 1; }
+  .lancement-cta { margin-top: 20px; }
+  .lancement-liste { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; align-content: start; }
+  .lancement-liste li { padding: 9px 0 9px 22px; position: relative; border-top: 1px solid #e0cbb6; font-size: .92rem; color: #433626; }
+  .lancement-liste li:nth-child(-n+2) { border-top: 0; }
+  .lancement-liste li::before { content: ""; position: absolute; left: 2px; top: 17px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); opacity: .75; }
+  @media (max-width: 780px) {
+    .lancement { grid-template-columns: minmax(0, 1fr); }
+    .lancement-liste { grid-template-columns: minmax(0, 1fr); }
+    .lancement-liste li:nth-child(2) { border-top: 1px solid #e0cbb6; }
+  }
+
+  /* --- Formules --- */
+  .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+  .plan { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; display: flex; flex-direction: column; }
+  .plan.featured { border-color: var(--green); border-width: 2px; background: #fffefb; }
+  .plan .tag { font-size: .68rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; color: var(--accent); margin-bottom: 10px; min-height: 1.1em; }
+  .plan h3 { font-size: 1.35rem; margin-bottom: 4px; }
+  .plan .sous { font-size: .86rem; color: var(--muted); margin: 0; }
+  .plan .price { font-family: var(--serif); font-size: 1.8rem; color: var(--green); margin: 12px 0 2px; }
+  .plan .price .prix-barre { text-decoration: line-through; color: var(--muted); font-size: inherit; font-family: inherit; margin-right: .18em; }
+  .plan .price small { font-family: var(--sans); font-size: .78rem; color: var(--muted); display: block; margin-top: 5px; line-height: 1.45; }
+  .plan .ticks { margin-top: 16px; flex: 1; }
+  .plan .ticks li { font-size: .89rem; padding: 7px 0 7px 20px; }
+  .plan .ticks li::before { top: 14px; width: 7px; height: 7px; }
+  .plan .btn { margin-top: 20px; width: 100%; font-size: .92rem; padding: 0 14px; }
+
+  .note { margin-top: 24px; padding: 18px 20px; background: var(--accent-soft); border-radius: var(--radius); font-size: .9rem; color: #4a3a2c; max-width: 80ch; }
+  .note b { color: var(--ink); }
+
+  /* --- Comparatif --- */
+  .scroll-mobile { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tableau { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: 8px; }
+  .tableau th, .tableau td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .tableau thead th { font-family: var(--sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border-bottom: 2px solid var(--green); }
+  .tableau td:not(:first-child), .tableau th:not(:first-child) { text-align: center; }
+  .tableau tbody tr:nth-child(odd) { background: rgba(255,253,248,.65); }
+  .tableau .oui { color: var(--green); font-weight: 600; }
+  .tableau .non { color: #b8b2a6; }
+
+  @media (max-width: 1000px) { .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 700px) {
+    .plans { grid-template-columns: minmax(0, 1fr); }
+    .service:nth-child(2n) { padding-left: 0; border-left: 0; }
+    .tableau { font-size: .82rem; }
+    .tableau th, .tableau td { padding: 9px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="menu-principal">
+      <a href="index.html">Accueil</a>
+      <a href="services.html" aria-current="page">Services &amp; formules</a>
+      <a href="clauvia.html">Clauvia</a>
+      <a class="cta-link" href="contact.html">Devis gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <div class="hero-services">
+    <div class="wrap">
+      <p class="eyebrow">Services &amp; formules</p>
+      <h1>Ce que je fais, et combien <em>ça coûte</em>.</h1>
+      <p class="lede">
+        Des dizaines de tâches couvertes, trois façons de les déléguer — plus un pack de lancement
+        si votre logement n'a jamais été loué.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="contact.html">Devis gratuit et personnalisé</a>
+        <a class="btn btn-ghost" href="tel:+33768427316">07 68 42 73 16</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-white" id="lancement">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pour un logement qui démarre</p>
+        <h2>Pack de lancement</h2>
+        <p class="lede">
+          Mettre un logement en location ne se résume pas à prendre une photo et à écrire trois lignes.
+          Ce forfait couvre tout ce qu'il faut préparer avant la première réservation.
+        </p>
+      </div>
+
+      <div class="lancement">
+        <div>
+          <p class="tag">Forfait de mise en place · une seule fois</p>
+          <h3>Pack de lancement</h3>
+          <p class="sous">Pour un logement qui n'a jamais été loué, ou qui repart sur de bonnes bases.</p>
+          <p class="prix-pack">150 €</p>
+          <p class="lancement-note">
+            Forfait, une seule fois.<br>
+            Premier ménage de mise en place non compris.
+          </p>
+          <div class="lancement-cta">
+            <a class="btn btn-primary" href="contact.html?formule=lancement">Demander un devis de lancement</a>
+          </div>
+        </div>
+        <ul class="lancement-liste">
+          <li>Rédaction et paramétrage des annonces (Airbnb, Booking, site Clauvia)</li>
+          <li>Photos du logement</li>
+          <li>Prix à la nuitée avec étude de marché locale</li>
+          <li>Tarification dynamique</li>
+          <li>Configuration des messages et des logiciels</li>
+          <li>Préparation du logement avant la première location</li>
+          <li>Déplacements pour les premiers rendez-vous</li>
+          <li>Conseils pour valoriser votre bien</li>
+          <li>Livret d'accueil personnalisé</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="formules">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Les formules</p>
+        <h2>Trois niveaux, selon ce que vous voulez garder</h2>
+        <p class="lede">Vous pouvez commencer par une seule intervention et monter quand vous le souhaitez. Rien n'est verrouillé.</p>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <p class="tag">À la carte</p>
+          <h3>Ponctuel</h3>
+          <p class="sous">Une prestation, une facture.</p>
+          <p class="price">Sur devis<small>selon la prestation</small></p>
+          <ul class="ticks">
+            <li>Ménage entre deux séjours — exceptionnel</li>
+            <li>Linge de maison</li>
+            <li>Petite intervention</li>
+            <li>Courses et réassort consommables</li>
+          </ul>
+          <a class="btn btn-ghost" href="contact.html?formule=essentiel">Demander une intervention</a>
+        </div>
+
+        <div class="plan featured">
+          <p class="tag">Le plus choisi</p>
+          <h3>Sérénité</h3>
+          <p class="sous">Tout délégué. Vous gardez vos annonces.</p>
+          <p class="price"><span class="prix-barre">15 %</span> 12,5 %<small>des revenus nets · ménage et linge gérés<br>Offre de la première année, puis 15 %</small></p>
+          <ul class="ticks">
+            <li>Ménage et linge, lavé et changé</li>
+            <li>Accueil, départ et boîte à clés</li>
+            <li>États des lieux et photos à chaque rotation</li>
+            <li>Consommables et stock suivis</li>
+            <li>Un interlocuteur, joignable 7 j / 7</li>
+            <li>Vous gardez vos annonces et vos prix</li>
+          </ul>
+          <a class="btn btn-primary" href="contact.html?formule=serenite">En parler</a>
+        </div>
+
+        <div class="plan">
+          <p class="tag">Clé en main</p>
+          <h3>Complète</h3>
+          <p class="sous">Vous ne faites plus rien.</p>
+          <p class="price"><span class="prix-barre">18 %</span> 15 %<small>des revenus nets · ménage et linge gérés<br>Offre de la première année, puis 18 %</small></p>
+          <ul class="ticks">
+            <li>Tout ce que comprend Sérénité</li>
+            <li>Annonce, prix et calendrier</li>
+            <li>Messagerie avec les voyageurs</li>
+            <li>Réparations et petits travaux suivis</li>
+            <li>Diffusion sur les réseaux Clauvia</li>
+          </ul>
+          <a class="btn btn-ghost" href="contact.html?formule=complete">Demander une estimation</a>
+        </div>
+
+      </div>
+
+      <div class="note">
+        <b>Comment lire ces prix.</b> La commission se calcule sur les revenus <b>nets</b> : après la plateforme, la taxe de séjour et le ménage payé par le voyageur. Vous ne reversez jamais de taxe de séjour.
+        <br><br>
+        <b>Ménage et linge.</b> Je fais le ménage, le voyageur le règle. Le linge reste le vôtre : je le lave et le change, je ne le fournis pas.
+        <br><br>
+        <b>La différence entre Sérénité et Complète, ce sont les annonces.</b> En Sérénité, vous gardez vos annonces, vos prix et vos messages. En Complète, je prends tout.
+        <br><br>
+        <b>Première année.</b> 12,5 % et 15 % pendant douze mois, puis 15 % et 18 %. Prévenu et accepté par écrit avant l'échéance.
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Comparatif</p>
+        <h2>Ce qui est inclus, formule par formule</h2>
+      </div>
+
+      <div class="scroll-mobile">
+        <table class="tableau">
+          <thead>
+            <tr>
+              <th>Prestation</th>
+              <th>Ponctuel</th>
+              <th>Sérénité</th>
+              <th>Complète</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Ménage entre deux séjours</td><td class="oui">exceptionnel, sur devis</td><td class="oui">oui</td><td class="oui">oui</td></tr>
+            <tr><td>Linge de maison (le vôtre)</td><td class="oui">à la carte</td><td class="oui">oui</td><td class="oui">oui</td></tr>
+            <tr><td>Accueil et départ des voyageurs</td><td class="non">—</td><td class="oui">oui</td><td class="oui">oui</td></tr>
+            <tr><td>Installation d'une boîte à clés</td><td class="non">—</td><td class="oui">comprise</td><td class="oui">comprise</td></tr>
+            <tr><td>États des lieux avec photos</td><td class="non">—</td><td class="oui">oui</td><td class="oui">oui</td></tr>
+            <tr><td>Gestion des annonces et des prix</td><td class="non">—</td><td class="non">à votre charge</td><td class="oui">oui</td></tr>
+            <tr><td>Messagerie avec les voyageurs</td><td class="non">—</td><td class="non">à votre charge</td><td class="oui">oui</td></tr>
+            <tr><td>Diffusion sur les réseaux Clauvia</td><td class="non">—</td><td class="non">—</td><td class="oui">oui</td></tr>
+            <tr><td>Maintenance de base : consommables et stock</td><td class="non">—</td><td class="oui">oui</td><td class="oui">oui</td></tr>
+            <tr><td>Réparations et petits travaux</td><td class="non">—</td><td class="non">sur demande</td><td class="oui">suivis</td></tr>
+            <tr><td>Coordination des artisans</td><td class="non">—</td><td class="non">sur demande</td><td class="oui">oui</td></tr>
+            <tr><td>Pack de lancement</td><td class="non">option</td><td class="non">option</td><td class="non">option</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.85rem;color:var(--muted);margin-top:14px">
+        <b>Frais de gestion</b> — Ponctuel : sur devis · Sérénité : 12,5 % puis 15 % · Complète : 15 % puis 18 %  <span style="opacity:.8">(tarif de la 1re année, taux plein ensuite)</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-green">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:28px;align-items:center">
+      <div style="flex:1 1 340px">
+        <h2>Une formule ne tombe pas juste&nbsp;?</h2>
+        <p class="lede" style="margin:12px 0 0">C'est fréquent : chaque logement a ses contraintes. On ajuste ensemble, par téléphone ou sur place.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-light" href="contact.html">Devis gratuit</a>
+        <a class="btn btn-outline-light" href="tel:+33768427316">07 68 42 73 16</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand brand--light" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <span>Conciergerie de location saisonnière — Vallée de la Sioule et Combrailles</span>
+    <span class="legal">
+      <a href="mailto:contact.clauvia@gmail.com">contact.clauvia@gmail.com</a>
+      <a href="tel:+33768427316">07 68 42 73 16</a>
+      <span>© <span id="year">2026</span> Clauvia</span>
+    </span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Menu déroulant sur téléphone
+  (function () {
+    var b = document.querySelector('.burger'), n = document.getElementById('menu-principal');
+    if (!b || !n) return;
+    b.addEventListener('click', function () {
+      var ouvert = n.classList.toggle('ouvert');
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    n.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { n.classList.remove('ouvert'); b.setAttribute('aria-expanded', 'false'); }
+    });
+  })();
+</script>
+</body>
+</html>

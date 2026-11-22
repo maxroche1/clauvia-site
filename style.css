@@ -1,0 +1,261 @@
+/* ===================================================================
+   Clauvia — feuille de style commune
+   Charte : vert bouteille #1B2F2A, sauge #466055, laiton #A68A64,
+   ivoire #F4F0E8, noir doux #1A1A1A. Serif a empattements fins pour les
+   titres, sans-serif pour le corps. Beaucoup de blanc, peu d'effets.
+   =================================================================== */
+:root {
+  --ink: #1a1a1a;
+  --green: #1b2f2a;
+  --green-deep: #142420;
+  --sage: #466055;
+  --brass: #a68a64;
+  --brass-dark: #8d7350;
+  --stone: #f4f0e8;
+  --stone-warm: #ece6d9;
+  --line: #ddd5c4;
+  --muted: #6d6a61;
+  --accent: #a68a64;
+  --alternate: #a68a64;
+  --white: #fffdf8;
+  --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: "Jost", ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --max: 1120px;
+  --radius: 2px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+body {
+  margin: 0;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.1rem, 5.2vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
+h3 { font-size: 1.28rem; }
+p { margin: 0 0 1em; }
+a { color: var(--green); text-decoration-color: var(--line); text-underline-offset: 3px; }
+a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+img { max-width: 100%; display: block; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+.eyebrow {
+  font-family: var(--sans); font-size: .72rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--accent);
+  margin: 0 0 14px;
+}
+.lede { font-size: clamp(1.02rem, 1.9vw, 1.2rem); color: #34322c; max-width: 60ch; }
+.skip { position: absolute; left: -9999px; top: 0; background: var(--green); color: #fff; padding: 12px 18px; z-index: 100; }
+.skip:focus { left: 12px; top: 12px; }
+
+
+/* ---------- Marque ----------
+   Deux déclinaisons du logo :
+   - sur ordinateur : le mot CLAUVIA seul (lettres espacées, laiton) ;
+   - sur téléphone et tablette : le C-clé, plus compact et lisible à petite taille.
+   Le C-clé reste aussi le favicon. */
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--brass); }
+/* Sur tous les écrans : le C-clé reste à gauche du nom, et le tout reste à gauche du menu. */
+.brand .mark { display: block !important; width: 30px; height: 60px; flex: 0 0 auto; }
+.brand .mark img { width: 30px; height: 60px; }
+.brand .word { display: none !important; }
+.brand .mark svg, .brand .mark img { display: block; width: 30px; height: 60px; }
+.brand .word { display: flex; flex-direction: column; line-height: 1; }
+.brand .word b {
+  font-family: var(--serif); font-weight: 400; font-size: 1.32rem;
+  letter-spacing: .26em; text-transform: uppercase; margin-right: -.26em;
+  color: var(--brass);
+}
+.brand .word small {
+  display: none;
+  font-family: var(--sans); font-weight: 300; font-size: .48rem;
+  letter-spacing: .17em; text-transform: uppercase; color: var(--muted);
+  margin-top: 6px; white-space: nowrap;
+}
+/* Sur téléphone / tablette : le C-clé remplace les lettres, et reste à côté de la navigation. */
+@media (max-width: 1024px) {
+  .brand .mark { display: block; width: 20px; height: 40px; }
+  .brand .mark img { width: 20px; height: 40px; }
+  .brand .word { display: none; }
+}
+.brand--light { color: var(--stone); }
+.brand--light .word small { color: #93a49a; }
+.brand--light .word b { color: var(--brass); }
+
+/* ---------- En-tête et navigation ---------- */
+.top {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--stone) 95%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; gap: 20px; min-height: 70px; padding-top: 10px; padding-bottom: 10px; }
+.logo { font-family: var(--serif); font-size: 1.48rem; letter-spacing: .01em; color: var(--green); text-decoration: none; display: flex; align-items: baseline; gap: 9px; }
+.logo .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); display: inline-block; transform: translateY(-9px); }
+.nav { display: flex; align-items: center; gap: 24px; margin-left: auto; }
+.nav a { font-size: .92rem; color: #3a3730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--brass-dark); border-bottom-color: var(--brass); }
+.nav a[aria-current="page"] { color: var(--green); border-bottom-color: var(--green); }
+.nav .cta-link {
+  background: var(--green); color: var(--white); padding: 11px 18px; border-radius: var(--radius);
+  font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; border-bottom: 0;
+}
+.nav .cta-link:hover { background: var(--green-deep); color: var(--white); }
+/* Sur téléphone : l'en-tête passe en menu déroulant (voir plus bas). */
+@media (max-width: 860px) {
+  .top .wrap { column-gap: 10px; padding-top: 8px; padding-bottom: 8px; min-height: 56px; }
+  .brand { flex: 0 0 auto; align-self: center; }
+  .brand .mark { width: 26px; height: 52px; }
+  .brand .mark img { width: 26px; height: 52px; }
+  .nav { gap: 15px; width: auto; flex: 1 1 auto; overflow-x: auto; margin-left: auto; padding-bottom: 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { flex: 0 0 auto; font-size: .86rem; }
+  .nav .cta-link { padding: 9px 13px; font-size: .86rem; }
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 24px; border-radius: var(--radius);
+  font-family: var(--sans); font-size: .97rem; font-weight: 500;
+  text-decoration: none; border: 1px solid transparent; cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: var(--brass); color: #fff; }
+.btn-ghost { background: transparent; color: var(--green); border-color: var(--line); }
+.btn-brass { background: var(--brass); color: #fff; }
+.btn-brass:hover { background: var(--brass-dark); color: #fff; }
+.btn-ghost:hover { border-color: var(--brass); color: var(--brass-dark); background: transparent; }
+.btn-light { background: var(--stone); color: var(--green); }
+.btn-light:hover { background: var(--brass); color: #fff; }
+.btn-outline-light { background: transparent; color: var(--stone); border-color: #55705f; }
+.btn-outline-light:hover { background: var(--brass); border-color: var(--brass); color: #fff; }
+
+/* ---------- Sections ---------- */
+section { padding: clamp(54px, 8vw, 92px) 0; }
+section + section { border-top: 1px solid var(--line); }
+.section-head { max-width: 62ch; margin-bottom: clamp(28px, 4vw, 46px); }
+.section-head h2 { margin-bottom: 14px; }
+.rule { display: block; width: 46px; height: 1px; background: var(--brass); border: 0; margin: 0 0 22px; }
+.section-head .lede { margin-top: 14px; }
+.bg-white { background: var(--white); }
+.bg-green { background: var(--green); color: var(--stone); }
+.bg-green h2, .bg-green h3 { color: var(--white); }
+.bg-green .lede { color: #c3ccc4; }
+.bg-green .eyebrow { color: #c4a883; }
+
+/* ---------- Bandeau de chiffres ---------- */
+.figures { background: var(--green); color: var(--stone); }
+.figures .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.figure { padding: 34px 24px; border-left: 1px solid #34473f; }
+.figure:first-child { border-left: 0; }
+.figure .n { font-family: var(--serif); font-size: clamp(1.8rem, 3.6vw, 2.5rem); line-height: 1; display: block; color: var(--white); }
+.figure .l { font-size: .8rem; color: #aebbb1; margin-top: 10px; display: block; letter-spacing: .04em; }
+
+/* ---------- Encart de preuve ---------- */
+.proof { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px 24px; }
+.proof h3 { font-size: 1.15rem; margin-bottom: 6px; color: var(--green); }
+.proof .rule { margin-bottom: 14px; }
+.proof ul { list-style: none; margin: 0; padding: 0; }
+.proof li { display: flex; gap: 14px; padding: 13px 0; border-top: 1px solid var(--line); font-size: .93rem; color: #3a3832; }
+.proof li:first-child { border-top: 0; }
+.proof li b { font-weight: 500; color: var(--ink); }
+.proof .num { font-family: var(--serif); font-size: 1.5rem; color: var(--brass); line-height: 1; min-width: 1.5em; }
+.proof li > span:last-child { min-width: 0; }
+
+/* ---------- Listes à puces ---------- */
+.ticks { list-style: none; padding: 0; margin: 0; }
+.ticks li { padding: 10px 0 10px 22px; position: relative; border-top: 1px solid #e9e2d3; font-size: .95rem; color: #3a3832; }
+.ticks li:first-child { border-top: 0; }
+.ticks li::before { content: ""; position: absolute; left: 2px; top: 19px; width: 7px; height: 7px; border-radius: 50%; background: var(--brass); opacity: .8; }
+.bg-green .ticks li { color: #d3dacd; border-color: #33503f; }
+.bg-green .ticks li::before { background: #c7d6c2; opacity: .8; }
+
+/* ---------- Formulaires ---------- */
+form { display: grid; gap: 14px; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.field input, .field textarea, .field select {
+  font: inherit; font-size: .97rem; padding: 13px 14px; min-height: 48px;
+  background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius); width: 100%;
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus { outline: 1px solid var(--brass); outline-offset: 1px; border-color: var(--brass); }
+.bg-green .field label { color: #a3b2a8; }
+.bg-green .field input, .bg-green .field textarea, .bg-green .field select { background: #20362e; color: var(--white); border-color: #3a5045; }
+.bg-green .field input::placeholder, .bg-green .field textarea::placeholder { color: #7d8f80; }
+.form-note { font-size: .8rem; color: var(--muted); margin: 0; }
+.bg-green .form-note { color: #8fa291; }
+.form-status { font-size: .88rem; margin: 0; min-height: 1.2em; }
+.form-status.ok { color: #4c7a4a; }
+.form-status.err { color: var(--brass-dark); }
+.bg-green .form-status.ok { color: #b7d3a8; }
+.bg-green .form-status.err { color: #e5c4a4; }
+
+/* ---------- Pied de page ---------- */
+footer { background: var(--ink); color: #a9a59a; font-size: .8rem; padding: 40px 0 46px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; }
+footer .brand .word small { color: #8d8a80; }
+footer a:hover { color: var(--brass); }
+footer a { color: #cdc9bd; }
+footer .legal { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-left: auto; }
+
+/* ---------- Empilement mobile ---------- */
+@media (max-width: 900px) {
+  .hero-grid, .zone-grid, .contact-grid, .plans, .services, .prose-grid { grid-template-columns: minmax(0, 1fr); }
+  .proof { padding: 24px 20px 18px; }
+  .figures .wrap { grid-template-columns: minmax(0, 1fr); }
+  .figure { border-left: 0; border-top: 1px solid #34473f; }
+  .figure:first-child { border-top: 0; }
+  .service:nth-child(2n) { padding-left: 0; border-left: 0; }
+}
+
+/* ---------- Communes ---------- */
+.communes { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.communes li { font-size: .85rem; padding: 6px 12px; border: 1px solid var(--line); border-radius: 100px; background: var(--stone); }
+
+/* ---------- Débordement horizontal sur téléphone ---------- */
+/* Le menu de l'en-tête défile tout seul ; le reste de la page ne doit jamais élargir la fenêtre. */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* ---------- Menu déroulant sur téléphone ---------- */
+/* Le bouton n'apparaît qu'en petit écran ; le menu se déplie sous l'en-tête. */
+.burger {
+  display: none; margin-left: auto; width: 44px; height: 44px; padding: 0;
+  background: none; border: 1px solid var(--line); border-radius: var(--radius);
+  align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer;
+}
+.burger span { display: block; width: 20px; height: 2px; background: var(--green); transition: transform .2s, opacity .2s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 860px) {
+  /* Le logo à gauche, le bouton à droite, le menu déplié en dessous. */
+  .top .wrap { flex-wrap: wrap; row-gap: 0; }
+  .brand { order: 1; align-self: center; }
+  .burger { order: 2; display: inline-flex; margin-left: auto; align-self: center; }
+  .nav { order: 3; }
+  .brand .mark { width: 26px; height: 52px; }
+  .brand .mark img { width: 26px; height: 52px; }
+  .nav {
+    display: none; width: 100%; flex-direction: column; align-items: stretch;
+    gap: 0; margin: 8px 0 0; padding: 6px 0 10px; overflow: visible;
+    border-top: 1px solid var(--line);
+  }
+  .nav.ouvert { display: flex; }
+  .nav a { padding: 13px 2px; font-size: .98rem; border-bottom: 1px solid var(--line); }
+  .nav a[aria-current="page"] { border-bottom-color: var(--line); color: var(--brass-dark); }
+  .nav .cta-link { margin-top: 12px; justify-content: center; border-bottom: 0; }
+}

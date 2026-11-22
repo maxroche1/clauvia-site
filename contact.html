@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Contact et devis gratuit — Clauvia</title>
+<meta name="description" content="Demandez un devis gratuit et sans engagement pour la gestion de votre location saisonnière en Vallée de la Sioule et Combrailles. Réponse sous 24 h.">
+<!-- Charte Clauvia : serif à empattements fins + sans-serif géométrique -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero-contact { padding: clamp(44px, 8vw, 76px) 0 clamp(32px, 4vw, 48px); border-bottom: 1px solid var(--line); }
+  .hero-contact h1 em { font-style: italic; color: var(--green); }
+  .hero-contact .lede { margin-top: 18px; }
+  .contact-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .direct a { display: block; font-size: 1.18rem; text-decoration: none; padding: 8px 0; color: var(--green); }
+  .direct a:hover { color: var(--accent); }
+  .direct .lbl { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 20px; }
+  .direct .lbl:first-child { margin-top: 0; }
+  .card-form { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 4vw, 34px); }
+  .rappel { margin-top: 28px; padding: 18px 20px; background: var(--accent-soft); border-radius: var(--radius); font-size: .9rem; color: #4a3a2c; }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="menu-principal">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services &amp; formules</a>
+      <a href="clauvia.html">Clauvia</a>
+      <a class="cta-link" href="contact.html" aria-current="page">Devis gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <div class="hero-contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Parlons de votre bien, <em>sans engagement</em>.</h1>
+      <p class="lede">
+        Dites-moi où est le logement et ce que vous voulez déléguer. Je réponds sous 24 h,
+        avec un chiffrage clair et, si besoin, une visite sur place.
+      </p>
+    </div>
+  </div>
+
+  <section style="padding-top:clamp(36px,5vw,56px)">
+    <div class="wrap contact-grid">
+
+      <div>
+        <p class="eyebrow">Directement</p>
+        <div class="direct">
+          <span class="lbl">Téléphone</span>
+          <a href="tel:+33768427316">07 68 42 73 16</a>
+          <span class="lbl">Email</span>
+          <a href="mailto:contact.clauvia@gmail.com">contact.clauvia@gmail.com</a>
+          <span class="lbl">Zone</span>
+          <span style="font-size:.98rem">Les Combrailles et alentours — Vallée de la Sioule et Puy-de-Dôme</span>
+        </div>
+
+        <div class="rappel">
+          <b>Le plus rapide :</b> un appel. Je réponds entre deux séjours, donc parfois avec un peu
+          de bruit de fond — mais c'est moi qui décroche.
+        </div>
+      </div>
+
+      <div class="card-form">
+        <form id="devis" novalidate>
+          <div class="field">
+            <label for="nom">Votre nom</label>
+            <input id="nom" name="nom" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="contact">Téléphone ou email</label>
+            <input id="contact" name="contact" type="text" required placeholder="Pour vous rappeler">
+          </div>
+          <div class="field">
+            <label for="commune">Commune du logement</label>
+            <input id="commune" name="commune" type="text" placeholder="Ex. Les Ancizes-Comps">
+          </div>
+          <div class="field">
+            <label for="besoin">Ce que vous cherchez</label>
+            <select id="besoin" name="besoin">
+              <option value="Ponctuel">Ponctuel — une prestation à la carte</option>
+              <option value="Sérénité">Sérénité — gestion déléguée, ménage compris (12,5 % 1re année, puis 15 %)</option>
+              <option value="Complète">Complète — gestion clé en main (15 % 1re année, puis 18 %)</option>
+              <option value="Lancement">Pack de lancement — mise en location</option>
+              <option value="Je ne sais pas">Je ne sais pas encore</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" placeholder="Type de logement, nombre de couchages, nombre de séjours par an…"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" style="margin-top:6px">Envoyer la demande</button>
+          <p class="form-note">Vos informations servent uniquement à vous répondre. Aucun partage, aucune revente.</p>
+          <p class="form-status" id="statut" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand brand--light" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <span>Conciergerie de location saisonnière — Vallée de la Sioule et Combrailles</span>
+    <span class="legal">
+      <a href="mailto:contact.clauvia@gmail.com">contact.clauvia@gmail.com</a>
+      <a href="tel:+33768427316">07 68 42 73 16</a>
+      <span>© <span id="year">2026</span> Clauvia</span>
+    </span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Menu déroulant sur téléphone
+  (function () {
+    var b = document.querySelector('.burger'), n = document.getElementById('menu-principal');
+    if (!b || !n) return;
+    b.addEventListener('click', function () {
+      var ouvert = n.classList.toggle('ouvert');
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    n.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { n.classList.remove('ouvert'); b.setAttribute('aria-expanded', 'false'); }
+    });
+  })();
+
+  const form = document.getElementById('devis');
+  const statut = document.getElementById('statut');
+
+  // Pré-sélection de la formule quand on arrive depuis une page avec ?formule=…
+  const params = new URLSearchParams(location.search);
+  const map = { ponctuel: 'Ponctuel', essentiel: 'Ponctuel', serenite: 'Sérénité', complete: 'Complète', lancement: 'Lancement' };
+  const cible = map[(params.get('formule') || '').toLowerCase()];
+  if (cible) form.besoin.value = cible;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nom = form.nom.value.trim();
+    const contact = form.contact.value.trim();
+    if (!nom || !contact) {
+      statut.textContent = 'Indiquez au moins votre nom et un moyen de vous joindre.';
+      statut.className = 'form-status err';
+      return;
+    }
+    const corps = [
+      'Nom : ' + nom,
+      'Contact : ' + contact,
+      'Commune du logement : ' + (form.commune.value.trim() || '—'),
+      'Formule souhaitée : ' + form.besoin.value,
+      '',
+      'Message :',
+      form.message.value.trim() || '—',
+    ].join('\n');
+
+    const sujet = 'Demande de devis Clauvia — ' + (form.commune.value.trim() || nom);
+    window.location.href = 'mailto:contact.clauvia@gmail.com?subject=' +
+      encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corps);
+
+    statut.textContent = 'Votre messagerie s\'ouvre avec la demande préremplie. Si rien ne se passe, écrivez à contact.clauvia@gmail.com ou appelez le 07 68 42 73 16.';
+    statut.className = 'form-status ok';
+  });
+</script>
+</body>
+</html>

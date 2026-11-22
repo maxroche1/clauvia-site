@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clauvia — Conciergerie immobilière · Vallée de la Sioule et Combrailles</title>
+<meta name="description" content="Clauvia gère votre location saisonnière dans la Vallée de la Sioule et les Combrailles. Exploitant de 5 hébergements depuis 3 ans, j'interviens sur place dans un rayon de 10 km. Devis gratuit.">
+<meta property="og:title" content="Clauvia — Conciergerie immobilière">
+<meta property="og:description" content="Je gère mes propres hébergements depuis 3 ans. Je m'occupe des vôtres de la même façon.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- Charte Clauvia : serif à empattements fins + sans-serif géométrique -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ---- Spécifique à l'accueil ---- */
+  .hero {
+    padding: clamp(52px, 8vw, 96px) 0 clamp(44px, 6vw, 72px);
+    border-bottom: 1px solid var(--line);
+    background: var(--green);
+    color: var(--stone);
+  }
+  .hero .eyebrow { color: #c4a883; }
+  .hero .lede { color: #c3ccc4; }
+  .hero .rule { background: var(--brass); }
+  .hero-proof { border-color: #34473f; }
+  .hero .proof { background: transparent; border-color: #34473f; }
+  .hero .proof h3 { color: var(--stone); }
+  .hero .proof li { color: #d6ddd4; border-color: #34473f; }
+  .hero .proof li b { color: var(--white); }
+  .hero .proof .num { color: var(--brass); }
+  .hero-inner { max-width: 46rem; }
+  .hero h1 { color: var(--white); }
+  .hero h1 em { font-style: italic; color: #c9b18c; }
+  .hero .rule { margin: 26px 0 24px; }
+  .hero .lede { margin: 0; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .hero-proof { margin-top: clamp(44px, 6vw, 68px); max-width: 42rem; }
+
+  /* Trois grandes entrées : l'accueil ne dit que l'essentiel. */
+  .portes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .porte {
+    display: flex; flex-direction: column; padding: 34px 30px 32px;
+    border-left: 1px solid var(--line); text-decoration: none; color: inherit;
+    transition: background .18s;
+  }
+  .porte:first-child { border-left: 0; }
+  .porte:hover { background: var(--white); }
+  .porte .num { font-family: var(--serif); font-size: .95rem; color: var(--brass); letter-spacing: .16em; }
+  .porte h3 { margin: 12px 0 10px; font-size: 1.6rem; color: var(--green); }
+  .porte p { font-size: .95rem; color: #45423a; margin: 0 0 20px; }
+  .porte .more { margin-top: auto; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brass-dark); }
+  .porte:hover .more { text-decoration: underline; text-underline-offset: 4px; }
+
+  .communes { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .communes li { font-size: .82rem; letter-spacing: .04em; padding: 7px 14px; border: 1px solid var(--line); border-radius: 100px; background: var(--stone); color: #3a3832; }
+
+  /* Zone d'intervention */
+  .zone-grid { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: clamp(24px,4vw,48px); align-items: start; }
+
+  /* Encart « un doute sur la zone » : on préfère recevoir une demande
+     hors périmètre plutôt que de laisser un propriétaire renoncer. */
+  .zone-doute { margin-top: 28px; padding: 22px 24px; background: var(--stone-warm); border: 1px solid var(--line); border-left: 2px solid var(--brass); border-radius: var(--radius); }
+  .zone-doute-titre { font-family: var(--serif); font-size: 1.2rem; color: var(--green); margin: 0 0 8px; }
+  .zone-doute-txt { font-size: .92rem; color: #45423a; margin: 0; }
+  .zone-doute-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .zone-doute-actions .btn { min-height: 44px; padding: 0 18px; font-size: .84rem; }
+
+  @media (max-width: 900px) {
+    .portes { grid-template-columns: minmax(0, 1fr); }
+    .porte { border-left: 0; border-top: 1px solid var(--line); padding: 28px 0; }
+    .porte:first-child { border-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="menu-principal">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="services.html">Services &amp; formules</a>
+      <a href="clauvia.html">Clauvia</a>
+      <a class="cta-link" href="contact.html">Devis gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="eyebrow">Clauvia</p>
+        <h1>Conciergerie immobilière</h1>
+        <span class="rule"></span>
+        <p class="lede">
+          Nous prenons soin de votre bien comme s'il était le nôtre.
+          Gestion complète en location courte et longue durée : accueil des voyageurs,
+          ménage, linge, états des lieux et petites réparations.
+          Vous gardez la main, nous nous occupons du reste.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-brass" href="services.html">Découvrir nos services</a>
+        </div>
+      </div>
+
+      <aside class="proof hero-proof" aria-label="L'esprit Clauvia">
+        <h3>L'esprit Clauvia</h3>
+        <span class="rule"></span>
+        <ul>
+          <li><span class="num">5</span><span><b>biens tenus en direct</b> depuis trois ans — nous savons ce qu'est une rotation à 10 h du matin.</span></li>
+          <li><span class="num">1</span><span><b>interlocuteur unique</b>, joignable 7 j / 7, qui connaît votre bien par cœur.</span></li>
+          <li><span class="num">10</span><span><b>kilomètres</b> de rayon d'intervention : sur place, pas à 60 km.</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <div class="figures">
+    <div class="wrap">
+      <div class="figure"><span class="n">3 ans</span><span class="l">d'exploitation en location saisonnière</span></div>
+      <div class="figure"><span class="n">5 logements</span><span class="l">tenus en direct, toute l'année</span></div>
+      <div class="figure"><span class="n">7 j / 7</span><span class="l">joignable, y compris le dimanche</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="portes">
+        <a class="porte" href="clauvia.html">
+          <span class="num">01</span>
+          <h3>Clauvia</h3>
+          <p>Qui je suis, ce que j'exploite déjà, et pourquoi ce métier ne s'improvise pas.</p>
+          <span class="more">Découvrir Clauvia →</span>
+        </a>
+        <a class="porte" href="services.html#lancement">
+          <span class="num">02</span>
+          <h3>Pack de lancement</h3>
+          <p>Le logement n'a jamais été loué&nbsp;? Annonces, photos, prix, réglages&nbsp;: 150 €, une seule fois.</p>
+          <span class="more">Voir ce qui est compris →</span>
+        </a>
+        <a class="porte" href="services.html">
+          <span class="num">03</span>
+          <h3>Services &amp; formules</h3>
+          <p>Accueil, ménage, linge, entretien : trois façons de déléguer, de la prestation ponctuelle au clé en main.</p>
+          <span class="more">Voir les formules →</span>
+        </a>
+        <a class="porte" href="contact.html">
+          <span class="num">04</span>
+          <h3>Parlons de votre bien</h3>
+          <p>Un devis gratuit, sans engagement, avec un chiffrage clair sous 24 h.</p>
+          <span class="more">Demander un devis →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="wrap zone-grid">
+      <div>
+        <p class="eyebrow">Zone d'intervention</p>
+        <h2>Les Combrailles<br>et alentours</h2>
+        <p style="color:var(--muted); font-size:.95rem; margin:18px 0 0">
+          Une petite zone, volontairement : c'est ce qui permet d'être réellement disponible.
+        </p>
+      </div>
+      <div>
+        <ul class="communes">
+          <li>Saint-Jacques-d'Ambur</li>
+          <li>Les Ancizes-Comps</li>
+          <li>Saint-Georges-de-Mons</li>
+          <li>Chapdes-Beaufort</li>
+          <li>Bromont-Lamothe</li>
+          <li>Combrailles</li>
+          <li>Pontaumur</li>
+          <li>Montfermy</li>
+          <li>Queuille</li>
+          <li>Biollet</li>
+        </ul>
+        <p style="margin:20px 0 0"><a href="services.html">Voir les services et les tarifs →</a></p>
+
+        <div class="zone-doute">
+          <p class="zone-doute-titre">Un doute sur la zone&nbsp;?</p>
+          <p class="zone-doute-txt">
+            Saint-Georges, Pontgibaud, Manzat, Bort-les-Orgues… ce n'est pas dans la liste&nbsp;?
+            Écrivez-moi quand même. Selon la saison et le nombre de séjours, ça peut s'organiser.
+          </p>
+          <div class="zone-doute-actions">
+            <a class="btn btn-primary" href="contact.html">Poser la question</a>
+            <a class="btn btn-ghost" href="tel:+33768427316">07 68 42 73 16</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-green">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:28px;align-items:center">
+      <div style="flex:1 1 340px">
+        <h2>Un logement à confier&nbsp;?</h2>
+        <p class="lede" style="margin:12px 0 0">Dites-moi où il est et ce que vous voulez déléguer. Je réponds sous 24 h.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-light" href="contact.html">Demander un devis</a>
+        <a class="btn btn-outline-light" href="tel:+33768427316">07 68 42 73 16</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand brand--light" href="index.html" aria-label="Clauvia, conciergerie immobilière"><span class="mark"><img src="logo-clauvia.svg" alt="" width="30" height="60"></span><span class="word"><b>Clauvia</b><small>Conciergerie immobilière</small></span></a>
+    <span>Conciergerie de location saisonnière — Vallée de la Sioule et Combrailles</span>
+    <span class="legal">
+      <a href="mailto:contact.clauvia@gmail.com">contact.clauvia@gmail.com</a>
+      <a href="tel:+33768427316">07 68 42 73 16</a>
+      <span>© <span id="year">2026</span> Clauvia</span>
+    </span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Menu déroulant sur téléphone
+  (function () {
+    var b = document.querySelector('.burger'), n = document.getElementById('menu-principal');
+    if (!b || !n) return;
+    b.addEventListener('click', function () {
+      var ouvert = n.classList.toggle('ouvert');
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    n.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { n.classList.remove('ouvert'); b.setAttribute('aria-expanded', 'false'); }
+    });
+  })();
+</script>
+</body>
+</html>
