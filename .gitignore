@@ -3,3 +3,5 @@ _site/
 node_modules/
 .DS_Store
 Thumbs.db
+# Supports imprimés (carte de visite, flyer) : pas publiés sur le site.
+impression/
