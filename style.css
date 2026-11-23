@@ -65,10 +65,9 @@ img { max-width: 100%; display: block; }
    - sur téléphone et tablette : le C-clé, plus compact et lisible à petite taille.
    Le C-clé reste aussi le favicon. */
 .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--brass); }
-/* Sur tous les écrans : le C-clé reste à gauche du nom, et le tout reste à gauche du menu. */
+/* Sur tous les écrans : la clé à gauche, le nom CLAUVIA à côté, le tout à gauche du menu. */
 .brand .mark { display: block !important; width: 30px; height: 60px; flex: 0 0 auto; }
 .brand .mark img { width: 30px; height: 60px; }
-.brand .word { display: none !important; }
 .brand .mark svg, .brand .mark img { display: block; width: 30px; height: 60px; }
 .brand .word { display: flex; flex-direction: column; line-height: 1; }
 .brand .word b {
@@ -82,11 +81,9 @@ img { max-width: 100%; display: block; }
   letter-spacing: .17em; text-transform: uppercase; color: var(--muted);
   margin-top: 6px; white-space: nowrap;
 }
-/* Sur téléphone / tablette : le C-clé remplace les lettres, et reste à côté de la navigation. */
-@media (max-width: 1024px) {
-  .brand .mark { display: block; width: 20px; height: 40px; }
-  .brand .mark img { width: 20px; height: 40px; }
-  .brand .word { display: none; }
+/* Sur téléphone : le nom reste affiché, un peu plus petit. */
+@media (max-width: 860px) {
+  .brand .word b { font-size: 1.12rem; letter-spacing: .24em; margin-right: -.24em; }
 }
 .brand--light { color: var(--stone); }
 .brand--light .word small { color: #93a49a; }
@@ -111,6 +108,8 @@ img { max-width: 100%; display: block; }
   font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; border-bottom: 0;
 }
 .nav .cta-link:hover { background: var(--green-deep); color: var(--white); }
+/* Sur la page Contact, le bouton est la page courante : garder le texte clair sur le fond vert. */
+.nav .cta-link[aria-current="page"] { color: var(--white); border-bottom: 0; }
 /* Sur téléphone : l'en-tête passe en menu déroulant (voir plus bas). */
 @media (max-width: 860px) {
   .top .wrap { column-gap: 10px; padding-top: 8px; padding-bottom: 8px; min-height: 56px; }
