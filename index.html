@@ -22,27 +22,28 @@
 <style>
   /* ---- Spécifique à l'accueil ---- */
   .hero {
-    padding: clamp(52px, 8vw, 96px) 0 clamp(44px, 6vw, 72px);
-    border-bottom: 1px solid var(--line);
+    padding: clamp(56px, 9vw, 112px) 0 clamp(48px, 7vw, 84px);
     background: var(--green);
     color: var(--stone);
+    overflow: hidden;
   }
-  .hero .eyebrow { color: #c4a883; }
-  .hero .lede { color: #c3ccc4; }
-  .hero .rule { background: var(--brass); }
-  .hero-proof { border-color: #34473f; }
-  .hero .proof { background: transparent; border-color: #34473f; }
-  .hero .proof h3 { color: var(--stone); }
-  .hero .proof li { color: #d6ddd4; border-color: #34473f; }
-  .hero .proof li b { color: var(--white); }
-  .hero .proof .num { color: var(--brass); }
-  .hero-inner { max-width: 46rem; }
-  .hero h1 { color: var(--white); }
-  .hero h1 em { font-style: italic; color: #c9b18c; }
-  .hero .rule { margin: 26px 0 24px; }
-  .hero .lede { margin: 0; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, .65fr); gap: clamp(24px, 6vw, 80px); align-items: center; }
+  .hero h1 { color: var(--white); font-size: clamp(2.6rem, 7vw, 4.9rem); line-height: 1.02; letter-spacing: -.02em; }
+  .hero .lede { color: #c3ccc4; margin: 26px 0 0; max-width: 52ch; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-  .hero-proof { margin-top: clamp(44px, 6vw, 68px); max-width: 42rem; }
+
+  /* La clé du logo, tracée une fois au chargement : c'est le seul mouvement de la page. */
+  .hero-cle { justify-self: center; width: clamp(150px, 22vw, 250px); }
+  .hero-cle svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .hero-cle path { stroke-dasharray: 1; stroke-dashoffset: 0; animation: trace 1.5s cubic-bezier(.5, 0, .2, 1) backwards; }
+  .hero-cle path:nth-child(2) { animation-delay: .9s; animation-duration: 1s; }
+  .hero-cle path:nth-child(3) { animation-delay: 1.7s; animation-duration: .5s; }
+  .hero-cle path:nth-child(4) { animation-delay: 1.95s; animation-duration: .5s; }
+  @keyframes trace { from { stroke-dashoffset: 1; } }
+
+  .hero-faits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 4vw, 48px); margin: clamp(48px, 7vw, 84px) 0 0; padding: 0; list-style: none; }
+  .hero-faits li { padding-top: 18px; border-top: 1px solid #34473f; font-size: .95rem; color: #c3ccc4; }
+  .hero-faits b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.5rem; line-height: 1.2; color: var(--white); margin-bottom: 4px; }
 
   /* Trois grandes entrées : l'accueil ne dit que l'essentiel. */
   .portes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
@@ -53,7 +54,6 @@
   }
   .porte:first-child { border-left: 0; }
   .porte:hover { background: var(--white); }
-  .porte .num { font-family: var(--serif); font-size: .95rem; color: var(--brass); letter-spacing: .16em; }
   .porte h3 { margin: 12px 0 10px; font-size: 1.6rem; color: var(--green); }
   .porte p { font-size: .95rem; color: #45423a; margin: 0 0 20px; }
   .porte .more { margin-top: auto; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brass-dark); }
@@ -73,6 +73,11 @@
   .zone-doute-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
   .zone-doute-actions .btn { min-height: 44px; padding: 0 18px; font-size: .84rem; }
 
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr); }
+    .hero-cle { display: none; }
+    .hero-faits { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  }
   @media (max-width: 900px) {
     .portes { grid-template-columns: minmax(0, 1fr); }
     .porte { border-left: 0; border-top: 1px solid var(--line); padding: 28px 0; }
@@ -155,30 +160,34 @@
 
   <div class="hero">
     <div class="wrap">
-      <div class="hero-inner">
-        <p class="eyebrow">Clauvia</p>
-        <h1>Conciergerie immobilière</h1>
-        <span class="rule"></span>
-        <p class="lede">
-          Nous prenons soin de votre bien comme s'il était le nôtre.
-          Gestion complète en location courte et longue durée : ménage, linge,
-          états des lieux, entretien et petites réparations.
-          Vous gardez la main, nous nous occupons du reste.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-brass" href="services.html">Découvrir nos services</a>
+      <div class="hero-grid">
+        <div>
+          <h1>Conciergerie immobilière</h1>
+          <p class="lede">
+            Nous prenons soin de votre bien comme s'il était le nôtre.
+            Gestion complète en location courte et longue durée : ménage, linge,
+            états des lieux, entretien et petites réparations.
+            Vous gardez la main, nous nous occupons du reste.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-brass" href="services.html">Découvrir nos services</a>
+          </div>
+        </div>
+        <div class="hero-cle" aria-hidden="true">
+          <svg viewBox="0 0 100 200" fill="none" stroke="#A68A64" stroke-width="1.6" stroke-linecap="round">
+            <path pathLength="1" d="M80.2 23.1 A40 40 0 1 0 80.2 68.9"/>
+            <path pathLength="1" d="M47 86 V192"/>
+            <path pathLength="1" d="M47 158 H71"/>
+            <path pathLength="1" d="M47 172 H68"/>
+          </svg>
         </div>
       </div>
 
-      <aside class="proof hero-proof" aria-label="L'esprit Clauvia">
-        <h3>L'esprit Clauvia</h3>
-        <span class="rule"></span>
-        <ul>
-          <li><span class="num">01</span><span><b>Du soin.</b> Chaque logement est préparé comme on aimerait le trouver en arrivant : propre, prêt, accueillant.</span></li>
-          <li><span class="num">02</span><span><b>De la proximité.</b> Un seul interlocuteur, facile à joindre, qui connaît votre bien et ses habitudes.</span></li>
-          <li><span class="num">03</span><span><b>De la clarté.</b> Vous savez toujours ce qui est fait chez vous, ce que ça coûte et pourquoi.</span></li>
-        </ul>
-      </aside>
+      <ul class="hero-faits" aria-label="L'esprit Clauvia">
+        <li><b>Du soin.</b>Chaque logement est préparé comme on aimerait le trouver en arrivant : propre, prêt, accueillant.</li>
+        <li><b>De la proximité.</b>Un seul interlocuteur, facile à joindre, qui connaît votre bien et ses habitudes.</li>
+        <li><b>De la clarté.</b>Vous savez toujours ce qui est fait chez vous, ce que ça coûte et pourquoi.</li>
+      </ul>
     </div>
   </div>
 
@@ -194,28 +203,24 @@
     <div class="wrap">
       <div class="portes">
         <a class="porte" href="clauvia.html">
-          <span class="num">01</span>
           <h3>Clauvia</h3>
           <p>Mon parcours, les logements dont je m'occupe déjà, et ma façon de travailler.</p>
-          <span class="more">Découvrir Clauvia →</span>
+          <span class="more">Découvrir Clauvia</span>
         </a>
         <a class="porte" href="services.html#lancement">
-          <span class="num">02</span>
           <h3>Pack de lancement</h3>
           <p>Le logement n'a jamais été loué&nbsp;? Annonces, photos, prix, réglages&nbsp;: 150 €, une seule fois.</p>
-          <span class="more">Voir ce qui est compris →</span>
+          <span class="more">Voir ce qui est compris</span>
         </a>
         <a class="porte" href="services.html">
-          <span class="num">03</span>
           <h3>Services &amp; formules</h3>
           <p>Ménage, linge, entretien, réparations : trois façons de déléguer, de la prestation ponctuelle au clé en main.</p>
-          <span class="more">Voir les formules →</span>
+          <span class="more">Voir les formules</span>
         </a>
         <a class="porte" href="contact.html">
-          <span class="num">04</span>
           <h3>Parlons de votre bien</h3>
           <p>Un devis gratuit, sans engagement, avec un chiffrage clair sous 24 h.</p>
-          <span class="more">Demander un devis →</span>
+          <span class="more">Demander un devis</span>
         </a>
       </div>
     </div>
