@@ -33,6 +33,7 @@
   .frise li { position: relative; padding: 0 0 30px 26px; }
   .frise li:last-child { padding-bottom: 0; }
   .frise li::before { content: ""; position: absolute; left: -5px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); border: 2px solid var(--stone); }
+  .bg-white .frise li::before { border-color: var(--white); }
   .frise .quand { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
   .frise h3 { margin: 6px 0 6px; font-size: 1.1rem; }
   .frise p { font-size: .94rem; color: #4a463e; margin: 0; }
@@ -87,7 +88,7 @@
     </div>
   </div>
 
-  <section>
+  <section class="bg-white">
     <div class="wrap prose-grid">
       <div>
         <p class="eyebrow">Le parcours</p>
@@ -120,7 +121,7 @@
     </div>
   </section>
 
-  <section class="bg-white">
+  <section>
     <div class="wrap">
       <div class="chiffre-cle">
         <div><span class="n">5</span><span class="l">hébergements gérés en direct</span></div>
@@ -131,7 +132,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="bg-white">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Ma façon de travailler</p>
