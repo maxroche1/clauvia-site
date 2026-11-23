@@ -21,7 +21,7 @@ Site statique (HTML/CSS/JS, aucune dépendance, aucun build). Il suffit de modif
 - **Commission sur les revenus nets**, jamais bruts.
 - **Le ménage est facturé aux locataires.** Le linge est lavé et changé, jamais fourni.
 - **Le pack de lancement est à 150 €**, une seule fois.
-- **Zone : « Les Combrailles et alentours »**. Le rayon de 10 km reste sur la page Clauvia.
+- **Zone : « Les Combrailles et alentours »**, sans rayon chiffré : rester vague pour ne décourager aucun propriétaire un peu plus loin.
 - **Pas de « haut de gamme », pas de « terrain »** : formulations écartées volontairement.
 - Aucune formule n'est engageante : ne pas remettre « sans engagement » sur une seule carte, ça laisserait croire que les autres le sont.
 
