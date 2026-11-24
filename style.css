@@ -268,3 +268,14 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .faq details[open] summary::after { content: "\2212"; }
 .faq summary:focus-visible { outline: 2px solid var(--brass-dark); outline-offset: 2px; }
 .faq details p { margin: 0 0 22px; max-width: 44rem; color: #45423a; font-size: .98rem; }
+
+/* ---------- Visuels (images/) ----------
+   Ratio fixe + object-fit : une vraie photo de n'importe quelle taille remplace
+   le visuel provisoire sans déformer la mise en page. */
+.visuel { margin: 0; }
+.visuel img { display: block; width: 100%; max-width: 100%; height: auto; object-fit: cover; border-radius: var(--radius); }
+.visuel--hero img { aspect-ratio: 16 / 10; }
+.visuel--formule { margin-bottom: 18px; }
+.visuel--formule img { aspect-ratio: 3 / 2; }
+.visuel--parcours { margin-top: 28px; }
+.visuel--parcours img { aspect-ratio: 16 / 10; }

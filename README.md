@@ -35,3 +35,25 @@ Site statique (HTML/CSS/JS, aucune dépendance, aucun build). Il suffit de modif
 ## Mise en ligne
 
 GitHub Pages, branche `main`, dossier racine. À chaque `push`, le site se met à jour en une minute environ.
+
+## Visuels provisoires (`images/`)
+
+Le site utilise cinq illustrations SVG provisoires, dessinées dans la palette de `style.css`. Chacune est marquée par un commentaire `<!-- VISUEL PROVISOIRE -->` dans le HTML.
+
+| Fichier | Où | Ratio | Taille d'origine |
+|---|---|---|---|
+| `images/hero-conciergerie.svg` | Accueil, à côté du titre | 16:10 | 1600 × 1000 |
+| `images/formule-ponctuel.svg` | Services, carte Ponctuel | 3:2 | 1200 × 800 |
+| `images/formule-serenite.svg` | Services, carte Sérénité | 3:2 | 1200 × 800 |
+| `images/formule-complete.svg` | Services, carte Complète | 3:2 | 1200 × 800 |
+| `images/parcours.svg` | Page Clauvia, section « Trois ans à gérer mes logements, cinq biens » | 16:10 | 1600 × 1000 |
+
+### Remplacer un visuel par une vraie photo
+
+1. Recadrer la photo au **même ratio** que le visuel remplacé (16:10 ou 3:2).
+2. L'exporter en `.jpg` ou `.webp`, **1600 px de large** pour le hero et le parcours, **1200 px** pour les formules, idéalement sous 250 Ko.
+3. La déposer dans `images/` avec **le même nom** que le SVG, en changeant l'extension (par exemple `hero-conciergerie.jpg`), puis modifier le `src` dans le HTML (`index.html`, `services.html` ou `clauvia.html`). Garder `width` et `height` (1600 × 1000 ou 1200 × 800).
+4. Réécrire l'`alt` pour décrire la vraie photo, et supprimer le commentaire `<!-- VISUEL PROVISOIRE -->`.
+5. Ne rien changer dans `style.css` : le ratio est imposé par la classe (`.visuel--hero`, `.visuel--formule`, `.visuel--parcours`) et `object-fit: cover` recadre la photo sans la déformer.
+
+Garder `loading="eager"` et `fetchpriority="high"` sur l'image du hero (première image visible), `loading="lazy"` sur toutes les autres.
