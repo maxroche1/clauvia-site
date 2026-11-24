@@ -159,7 +159,7 @@
 
   // Pré-sélection de la formule quand on arrive depuis une page avec ?formule=…
   const params = new URLSearchParams(location.search);
-  const map = { ponctuel: 'Ponctuel', essentiel: 'Ponctuel', serenite: 'Sérénité', complete: 'Complète', lancement: 'Je ne sais pas' };
+  const map = { ponctuel: 'Ponctuel', essentiel: 'Ponctuel', serenite: 'Sérénité', complete: 'Complète' };
   const cible = map[(params.get('formule') || '').toLowerCase()];
   if (cible) form.besoin.value = cible;
 
