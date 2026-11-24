@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#A68A64" aria-hidden="true">
   <rect width="64" height="64" fill="#1B2F2A" stroke="none"/>
-  <!-- Clé Clauvia, trait épaissi pour rester lisible à 16 px -->
-  <g transform="translate(19.4,4) scale(0.28)" stroke-width="16">
+  <!-- Clé Clauvia centrée, avec une marge pour rester entière quand Google découpe l'icône en rond -->
+  <g transform="translate(21.5,7.2) scale(0.25)" stroke-width="16">
     <path d="M75.2 23.1 A40 40 0 1 0 75.2 68.9"/>
     <path d="M42 86 V192" stroke-linecap="round"/>
     <path d="M42 158 H66"/>
