@@ -108,7 +108,6 @@
               <option value="Ponctuel">Ponctuel — une prestation à la carte</option>
               <option value="Sérénité">Sérénité — gestion déléguée, ménage compris (12,5 % 1re année, puis 15 %)</option>
               <option value="Complète">Complète — gestion clé en main (15 % 1re année, puis 18 %)</option>
-              <option value="Lancement">Pack de lancement — mise en location</option>
               <option value="Je ne sais pas">Je ne sais pas encore</option>
             </select>
           </div>
@@ -160,7 +159,7 @@
 
   // Pré-sélection de la formule quand on arrive depuis une page avec ?formule=…
   const params = new URLSearchParams(location.search);
-  const map = { ponctuel: 'Ponctuel', essentiel: 'Ponctuel', serenite: 'Sérénité', complete: 'Complète', lancement: 'Lancement' };
+  const map = { ponctuel: 'Ponctuel', essentiel: 'Ponctuel', serenite: 'Sérénité', complete: 'Complète', lancement: 'Je ne sais pas' };
   const cible = map[(params.get('formule') || '').toLowerCase()];
   if (cible) form.besoin.value = cible;
 
